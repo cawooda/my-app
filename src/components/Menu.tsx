@@ -22,7 +22,7 @@ function Menu({ items }: MenuProps) {
         <ul>
           {items.map((item) => (
             <li key={item.id}>
-              <a href={}>{item.name}</a>
+              <a href={`${item.name.toLocaleLowerCase()}`}>{item.name}</a>
             </li>
           ))}
         </ul>
