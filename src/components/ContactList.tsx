@@ -1,4 +1,4 @@
-import React, { type ComponentProps, type ReactElement } from 'react';
+import { type ReactElement } from 'react';
 import type { Contact } from '../types';
 
 function ContactList({ contacts }: { contacts: Contact[] }): ReactElement {

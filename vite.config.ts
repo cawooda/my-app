@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
-export default defineConfig({
+export default defineConfig(() => ({
   plugins: [react(), tailwindcss()],
-  base: import.meta.env.VITE_BASE_PATH || '/',
+  base: process.env.VITE_BASE_PATH || '/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -15,4 +15,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-});
+}));

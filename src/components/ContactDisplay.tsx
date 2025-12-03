@@ -19,7 +19,7 @@ function ContactDisplay(): React.ReactElement {
 
   if (contact === null) return <div className="error">Contact not found</div>;
   return (
-    <div className="shadow-md p-4 flex flex-col backdrop-brightness-90 shadow-2xl basis-2/3 items-center rounded-lg">
+    <div className="shadow-md p-4 flex flex-col backdrop-brightness-90  basis-2/3 items-center rounded-lg">
       <img
         src={contact.avatar}
         alt={`${contact.firstName} ${contact.lastName}`}
