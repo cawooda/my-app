@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
 
 type Item = {
   id: number;
   name: string;
+  path: string;
 };
 
 type MenuProps = {
@@ -22,7 +24,13 @@ function Menu({ items }: MenuProps) {
         <ul>
           {items.map((item) => (
             <li key={item.id}>
-              <a href={`${item.name.toLocaleLowerCase()}`}>{item.name}</a>
+              <Link
+                onClick={toggleMenu}
+                viewTransition
+                to={`${item.name.toLocaleLowerCase()}`}
+              >
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -35,18 +43,11 @@ function Menu({ items }: MenuProps) {
     return (
       <nav>
         <ul>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          {items.map((item) => (
+            <li key={item.id}>
+              <a href={`${item.path}`}>{item.name}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     );

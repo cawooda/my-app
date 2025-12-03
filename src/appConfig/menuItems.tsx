@@ -1,8 +1,8 @@
 const menuItems = [
-  { id: 1, name: 'Home' },
-  { id: 2, name: 'About' },
-  { id: 3, name: 'Services' },
-  { id: 4, name: 'Contact' },
+  { id: 1, name: 'Home', path: '/' },
+  { id: 2, name: 'About', path: '/about' },
+  { id: 3, name: 'Services', path: '/services' },
+  { id: 4, name: 'Contacts', path: '/contacts' },
 ];
 
 export default menuItems;
