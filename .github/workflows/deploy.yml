@@ -56,3 +56,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Build project
+        run: npm run build
+        env:
+          VITE_BASE_PATH: /my-app/
