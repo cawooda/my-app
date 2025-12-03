@@ -1,17 +1,10 @@
 import { createBrowserRouter } from 'react-router';
 
 import ContactForm from './forms/ContactForm';
-
 import ContactDisplay from './components/ContactDisplay';
-
-import {
-  HomePage,
-  AboutPage,
-  ServicesPage,
-  ContactPage,
-} from './pages/index.tsx';
-
+import { HomePage, AboutPage, ServicesPage, ContactPage } from './pages/index';
 import MainLayout from './layouts/MainLayout';
+const basePath = import.meta.env.VITE_BASE_PATH || '/';
 
 const appRoutes = createBrowserRouter(
   [
@@ -46,7 +39,7 @@ const appRoutes = createBrowserRouter(
       ],
     },
   ],
-  { basename: import.meta.env.DEV ? '/' : '/my-app/' }
+  { basename: basePath }
 );
 
 export default appRoutes;
